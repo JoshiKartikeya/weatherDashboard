@@ -8,7 +8,6 @@ import {
   Card,
   CardContent,
   Typography,
-  Grid,
   Divider,
   Chip,
 } from "@mui/material";
@@ -115,36 +114,36 @@ const WeatherCard = ({ weatherData, onRefresh }: WeatherCardProps) => {
           }}
         />
 
-        <Grid container spacing={2}>
-          <Grid item xs={6}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <Typography variant="body2" color="text.secondary">
-                Humidity
-              </Typography>
-              <Typography variant="h6">{humidity}%</Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={6}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <Typography variant="body2" color="text.secondary">
-                Wind Speed
-              </Typography>
-              <Typography variant="h6">{wind.speed} km/h</Typography>
-            </Box>
-          </Grid>
-        </Grid>
+        <Box display="flex" flexWrap="wrap" justifyContent="center" gap={2}>
+          <Box
+            sx={{
+              flex: "1 1 calc(50% - 16px)",
+              minWidth: "150px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Typography variant="body2" color="text.secondary">
+              Humidity
+            </Typography>
+            <Typography variant="h6">{humidity}%</Typography>
+          </Box>
+          <Box
+            sx={{
+              flex: "1 1 calc(50% - 16px)",
+              minWidth: "150px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Typography variant="body2" color="text.secondary">
+              Wind Speed
+            </Typography>
+            <Typography variant="h6">{wind.speed} km/h</Typography>
+          </Box>
+        </Box>
 
         <Box sx={{ display: "flex", justifyContent: "center", mt: 3 }}>
           <Chip

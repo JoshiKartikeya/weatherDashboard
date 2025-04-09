@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  env: {
+    OPENWEATHERMAP_API_KEY: process.env.OPENWEATHERMAP_API_KEY || "",
+  },
+  reactStrictMode: true,
+  poweredByHeader: false,
+  images: {
+    domains: ["openweathermap.org"],
+  },
 };
 
 export default nextConfig;

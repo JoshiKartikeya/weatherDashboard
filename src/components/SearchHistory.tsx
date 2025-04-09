@@ -2,7 +2,7 @@
 
 import { useTheme } from "@/context/ThemeContext";
 import { useWeather } from "@/context/WeatherContext";
-import { Box, Card, Typography, Grid } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 
 const SearchHistory = () => {
@@ -24,9 +24,12 @@ const SearchHistory = () => {
       >
         Recent Searches
       </Typography>
-      <Grid container spacing={2} justifyContent="center">
+      <Box display="flex" flexWrap="wrap" justifyContent="center" gap={2}>
         {searchHistory.map((item) => (
-          <Grid item xs={12} sm={6} md={4} lg={2.4} key={item.id}>
+          <Box
+            key={item.id}
+            sx={{ flex: "1 1 calc(20% - 16px)", minWidth: "200px" }}
+          >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -75,9 +78,9 @@ const SearchHistory = () => {
                 </Typography>
               </Card>
             </motion.div>
-          </Grid>
+          </Box>
         ))}
-      </Grid>
+      </Box>
     </Box>
   );
 };
