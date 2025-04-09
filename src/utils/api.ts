@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { WeatherData, ForecastData } from '@/types/weather';
 
-const API_KEY = process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY;
-const BASE_URL = process.env.NEXT_PUBLIC_OPENWEATHERMAP_BASE_URL || 'https://api.openweathermap.org/data/2.5';
+const API_KEY = process.env.OPENWEATHERMAP_API_KEY;
+const BASE_URL = process.env.OPENWEATHERMAP_BASE_URL || 'https://api.openweathermap.org/data/2.5';
 
 export const fetchWeatherData = async (city: string): Promise<WeatherData> => {
   try {
